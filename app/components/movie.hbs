@@ -1,0 +1,26 @@
+<div class="px-4 pt-1 pb-2 w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
+  <div class="bg-white rounded-lg overflow-hidden shadow relative">
+    <img class="w-full object-cover object-center" src={{ this.poster }}
+      alt="The movie titled: {{ @movie.original_title }}">
+    <div class="p-4 h-auto md:h-40 lg:h-48">
+      <a href="#" class="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
+        {{ @movie.original_title }}
+      </a>
+      <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
+        {{ @movie.overview }}
+      </div>
+      <div class="relative mt-2 lg:absolute bottom-0 mb-4 md:hidden lg:block">
+        {{#if this.isGoodMovie }}
+        <a class="inline bg-green-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700"
+          href="#">{{ @movie.vote_average }}</a>
+        {{else}}
+        <a class="inline bg-red-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700"
+          href="#">{{ @movie.vote_average }}</a>
+        {{/if}}
+
+        <a class="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700"
+          href="#">{{ @movie.release_date }}</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<form class="flex justify-center my-4">
+  <input
+    type="search"
+    value={{ searchValue }}
+    class="w-2/5 border border-black p-1"
+    {{ on 'change' this.searchChange }}>
+  <button
+    type="submit"
+    class="p-1 bg-transparent bg-blue-500  border border-solid border-black w-24 ml-1 cursor-pointer hover:bg-gray-700 hover:text-yellow-300"
+    {{on "click" this.searchMovies }}> Search </button>
+</form>

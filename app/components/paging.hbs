@@ -1,0 +1,15 @@
+<div class="mt-4 content-center">
+<ul class="flex list-reset border border-grey-light rounded w-auto font-sans items-center justify-center cursor-pointer">
+ 
+   <li><a class="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2" href="#" {{on "click" this.goPreviousPage }}>Previous</a></li>
+{{#if this.isNotPageOne }}
+   <li><a class="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2" href="#" {{on "click" this.goStartPage }}>1</a></li>
+   <li><a class="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2" href="#">....</a></li>
+{{/if}}
+
+  <li><a class="block text-blue bg-blue border-r border-blue px-3 py-2" href="#">{{@paging.page}}</a></li>
+  <li><a class="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2" href="#">....</a></li>
+  <li><a class="block hover:text-white hover:bg-blue text-blue border-r border-grey-light px-3 py-2" href="#" {{on "click" this.goLastPage }}>{{@paging.total_pages}}</a></li>
+  <li><a class="block hover:text-white hover:bg-blue text-blue px-3 py-2" href="#"  {{on "click" this.goNextPage }}>Next</a></li>
+</ul>
+</div>

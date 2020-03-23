@@ -1,0 +1,21 @@
+{{#if this.currentlyLoading }}
+<SearchLoading />
+{{else}}
+{{#if this.model.isSuccess }}
+<Search @search={{ this.search }} />
+
+<div class="mt-4">
+  <div class="flex flex-wrap">
+    {{#each this.model.data.results as |movie|}}
+    <Movie @movie={{movie}} />
+    {{/each}}
+  </div>
+</div>
+
+<Paging @paging={{ this.model.data }} @changePage={{ this.changePage }} />
+{{else}}
+<SearchError @text={{ this.model.errorMassege }} />
+
+{{/if}}
+
+{{/if}}
